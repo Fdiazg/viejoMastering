@@ -1,0 +1,128 @@
+/* .faqs-container{
+    padding: 0 10rem 1.5rem 10rem;
+    border: 1px solid red;
+} */
+
+
+:root {
+    --azul-50: #F1F8FE;
+    --azul-100: #E2F0FC;
+    --azul-200: #BFE0F8;
+    --azul-300: #87C9F2;
+    --azul-400: #47ACE9;
+    --azul-500: #1F92D8;
+    --azul-600: #1174B8;
+    --azul-700: #0F5D95;
+    --azul-800: #114F7B;
+    --azul-900: #134267;
+    --azul-950: #0B243A;
+
+    --text-primario: #fff;
+    --text-secundario: #8492A7;
+
+    --texto-primario-claro: #000;
+
+    --rosa-50: #FDF2F7;
+    --rosa-100: #FCE7F1;
+    --rosa-200: #FCCEE3;
+    --rosa-300: #FBA6CB;
+    --rosa-400: #F76FA8;
+    --rosa-500: #F04487;
+    --rosa-600: #E1306C;
+    --rosa-700: #C2144A;
+    --rosa-800: #A0143D;
+    --rosa-900: #851637;
+    --rosa-950: #52051C;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.main-faqs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 10rem 1.5rem 10rem;
+    /* padding: 1.5rem; */
+}
+
+.faqs-titulo {
+    padding: 0 4rem;
+}
+
+.faqs-titulo h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 1.5rem;
+}
+
+.faqs-lista {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+}
+
+.faqs-lista__preguntas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+ /* .ancla {
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height 0.3s ease-out;
+}  */
+
+
+
+
+.faqs-lista__preguntas h3 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    padding: .5rem 0;
+}
+
+.bi-chevron-down {
+    transition: all .3s ease;
+}
+
+.bi-chevron-down.checked{
+    transition: all .3s ease;
+    rotate: 180deg;
+
+}
+
+.faqs-lista__descripcion{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    
+}
+
+.faqs-lista__descripcion p {
+    margin: 0;
+    font-size: 15px;   
+}
+
+.faqs-lista__descripcion a {
+    color: var(--text-primario);
+}
+
+.faqs-lista__descripcion a:hover {
+    color: var(--rosa-600);
+}
