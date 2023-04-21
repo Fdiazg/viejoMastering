@@ -157,7 +157,7 @@ function cargarPortadasDom() {
                     currentPage++;
                     showImages();
                     console.log(currentPage)
-                    if ((currentPage + 1) * limitPerPage > dataMaster.length) {
+                    if ((currentPage + 1) * limitPerPage >= dataMaster.length) {
                         derechaBtn.classList.add("ocultar-botones")
                         console.log(currentPage)
                     }

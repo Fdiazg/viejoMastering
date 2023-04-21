@@ -543,9 +543,9 @@ padding: .5rem;
         display: none;
     }
 
-    /* .portadas {
-        padding: 2rem 0.5rem;
-    } */
+     .portadas {
+        padding: 1rem 0.5rem;
+    } 
 
     .portadas img {
         max-width: 100px;
