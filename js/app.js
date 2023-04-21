@@ -70,7 +70,19 @@ function cargarPortadasDom() {
 
             // Inicializar la página actual y el límite de imágenes por página
             let currentPage = 0;
-            const limitPerPage = 21;
+            let limitPerPage = 24;
+
+            //Cambiar para versión mobile
+            const mediaQuery = window.matchMedia("(max-width: 425px)");
+            if (mediaQuery.matches) {
+                limitPerPage = 12;
+            }
+
+            // if (window.innerWidth < 768) {
+            //     limitPerPage = 16;
+            //   }
+
+
             //Aplicar portadas de forma random antes de mostrarlas
             dataMaster.sort(() => Math.random() - 0.5);
 
