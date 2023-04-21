@@ -241,6 +241,7 @@ button {
     /* padding: 4rem 4rem; */
     /* padding: 4rem 10rem; */
     /* padding: 2rem 10rem; */
+    padding: 2rem 0.5rem;
     width: 80%;
     margin: auto;
 }
@@ -542,12 +543,16 @@ padding: .5rem;
         display: none;
     }
 
-    .portadas {
+    /* .portadas {
         padding: 2rem 0.5rem;
-    }
+    } */
 
     .portadas img {
         max-width: 100px;
+    }
+
+    .container-botones{
+        padding-bottom: 1rem;
     }
 
 
