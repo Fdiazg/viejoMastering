@@ -149,7 +149,7 @@ a {
 }
 
 .faqs-lista__descripcion a:hover {
-    color: var(--rosa-700);
+    color: var(--rosa-600);
 }
 
 
@@ -183,22 +183,4 @@ a {
         font-size: 16px;
     }
 
-    .faqs-lista-contenido {
-        padding: 1rem;
-    }
-    .faqs-lista-contenido ul{
-        padding-left: .5rem;
-    }
-
-}
-
-@media (max-width:426px){
-
-    .faqs-lista__preguntas{
-        flex-wrap: nowrap;
-    }
-
-    .bi-chevron-down {
-        padding-left: 0.25rem;
-    }
 }

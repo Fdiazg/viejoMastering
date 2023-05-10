@@ -73,7 +73,7 @@ function cargarPortadasDom() {
             let limitPerPage = 24;
 
             //Cambiar para versión mobile
-            const mediaQuery = window.matchMedia("(max-width: 425px)");
+            const mediaQuery = window.matchMedia("(max-width: 426px)");
             if (mediaQuery.matches) {
                 limitPerPage = 12;
             }
