@@ -317,8 +317,16 @@ function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamie
 
     // Mostramos el popup
     const popup = document.querySelector("#popup");
-    popup.classList.remove("hidden");
 
+    // Evitar que se abra si el menú está abierto
+    const clickx = document.querySelector('.drop-menu');
+    if (!clickx.classList.contains('open-menu')) {
+     
+    popup.classList.remove("hidden");
+   
+    }
+
+    //Cerrar el popup apretando fuera
     const popupContainer = document.querySelector(".popup-container__main");
 
     popup.addEventListener("click", (e) => {

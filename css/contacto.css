@@ -251,6 +251,7 @@ a {
     align-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 
 }
 
@@ -327,7 +328,7 @@ a {
     .main-contacto{
         padding-bottom: .5rem;
         border-bottom: 1px solid var(--azul-800);
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .contacto-container {
@@ -352,4 +353,13 @@ a {
         flex-basis: 48%;
     }
 
+}
+
+@media (max-width:426px){
+    .form-faqs{
+        padding: 1rem .5rem;
+    }
+    .bajada-form p {
+        padding-bottom: .5rem;
+    }
 }
