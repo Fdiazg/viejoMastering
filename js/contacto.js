@@ -54,73 +54,142 @@ fechaInicio.addEventListener("change", function () {
 });
 
 
+//  function loader() {
+//      document.querySelector('.loader').style.display = 'none';
+
+//      mainForm.innerHTML = ''
+//      mainForm.style.display = 'none'
+//      formFaqs.innerHTML = ''
+//      formFaqs.style.display = 'none'
+//      document.querySelector('.loader').style.display = 'block'
+
+//      setTimeout(() => {
+//          document.querySelector('.loader').style.display = 'none';
+//          mensajeForm.style.display = 'flex'
+//      }, 1000);
+
+//  }
+
+
+
+
+
 
 // ? FORM
- const enviarForm = document.querySelector('#form');
- const mainForm = document.querySelector('#main-contacto')
- const mensajeForm = document.querySelector('#mensajeForm')
- const formFaqs = document.querySelector('#form-faqs')
-
- document.querySelector('.loader').style.display = 'none';
+const enviarForm = document.querySelector('#form');
+const mainForm = document.querySelector('#main-contacto')
+const mensajeForm = document.querySelector('#mensajeForm')
+const formFaqs = document.querySelector('#form-faqs')
 
 
- enviarForm.addEventListener('submit', (e) => {
-     e.preventDefault();
+const emailContact = document.querySelector('#email').value;
+document.querySelector('.loader').style.display = 'none';
 
 
-     const formData = new FormData(e.target);
-     const data = Object.fromEntries(formData.entries());
+enviarForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-     console.log(data)
-     mainForm.innerHTML = '';
-     mainForm.style.display = 'none'
-     formFaqs.innerHTML = '';
-     formFaqs.style.display = 'none';
-     document.querySelector('.loader').style.display = 'block';
 
-     setTimeout(() => {
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    // const body = JSON.stringify(data, null, 2);
+
+    console.log(data)
+    Email.send({
+
+        SecureToken: '38cad0e9-fafb-4bc5-acdc-631a58f4ac76',
+        //   Host : "smtp.elasticemail.com",
+        //   Username : "username",
+        //   Password : "password",
+        To: 'viejomastering@gmail.com',
+        From: 'viejomastering@gmail.com',
+        Subject: `Mail de artista: ${data.proyect}`,
+        Body:
+            `
+            <strong>Información de contacto</strong>
+            <br>
+            Nombre: ${data.name} 
+            <br>
+            Email: ${data.email}
+            <br>
+            País: ${data.country}
+            <br>
+            <strong>Información de proyecto</strong>
+            <br>
+            <br>
+            Nombre de artista: ${data.proyect}
+            <br>
+            Tipo de proyecto: ${data.type}
+            <br>
+            Cantidad de temas: ${data.numberTracks}
+            <br>
+            Duración del proyect: ${data.duration}
+            <br>
+            Fecha de envío de mezclas: ${data.dateMix}
+            <br>
+            Fecha de envío de master: ${data.dateMaster}
+            <br>
+            Comentarios: ${data.comment}            
+            `
+    }).then((message) => {
+        console.log(message);
+        if (message === "OK") {
+            mostrarMensajeExito();
+        }
+    });
+
+});
+
+function mostrarMensajeExito() {
+
+    // const mensajeExito = document.getElementById("mensajeExito");
+    // mensajeExito.style.display = "block";
+
+
+
+    mainForm.innerHTML = ''
+    mainForm.style.display = 'none'
+    formFaqs.innerHTML = ''
+    formFaqs.style.display = 'none'
+    document.querySelector('.loader').style.display = 'block'
+
+    setTimeout(() => {
         document.querySelector('.loader').style.display = 'none';
         mensajeForm.style.display = 'flex'
-     }, 1000);
+    }, 500);
 
 
 
- })
 
-// const enviarForm = document.querySelector('#form');
-// const mensajeForm = document.querySelector('#mensajeForm');
+}
 
-// enviarForm.addEventListener('submit', (e) => {
-//   e.preventDefault();
 
-//   const formData = new FormData(e.target);
-//   const data = Object.fromEntries(formData.entries());
 
-//   fetch('/envio-form.php', {
-//     method: 'POST',
-//     body: formData
-//   })
-//   .then(response => {
-//     if (response.ok) {
-//       // Se envió el formulario correctamente
-//       enviarForm.reset(); // Limpia los campos del formulario
-//       mensajeForm.textContent = 'Formulario enviado correctamente';
-//       mensajeForm.classList.remove('error');
-//       mensajeForm.classList.add('exito');
-//     } else {
-//       // Hubo un error al enviar el formulario
-//       mensajeForm.textContent = 'No se pudo enviar el formulario';
-//       mensajeForm.classList.remove('exito');
-//       mensajeForm.classList.add('error');
-//     }
-//   })
-//   .catch(error => {
-//     // Hubo un error al enviar el formulario
-//     mensajeForm.textContent = 'Error al enviar el formulario';
-//     mensajeForm.classList.remove('exito');
-//     mensajeForm.classList.add('error');
+//   document.querySelector('.loader').style.display = 'none';
+
+
+//   enviarForm.addEventListener('submit', (e) => {
+//       e.preventDefault();
+
+
+//       const formData = new FormData(e.target);
+//       const data = Object.fromEntries(formData.entries());
+
+//       console.log(data)
+//       mainForm.innerHTML = '';
+//       mainForm.style.display = 'none'
+//       formFaqs.innerHTML = '';
+//       formFaqs.style.display = 'none';
+//       document.querySelector('.loader').style.display = 'block';
+
+//       setTimeout(() => {
+//          document.querySelector('.loader').style.display = 'none';
+//          mensajeForm.style.display = 'flex'
+//       }, 1000);
+
+
+
 //   });
-// });
 
 
 

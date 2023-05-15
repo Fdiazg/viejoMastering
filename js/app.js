@@ -1,58 +1,4 @@
 
-// fetch('https://backend-masteringdb.up.railway.app/mastering/paging?page=1')
-
-
-// fetch('https://backend-masteringdb.up.railway.app/mastering/')
-// .then(res => {
-//     return res.json();
-// })
-// .then(data =>{
-//     console.table(data.mastering)
-//     const dataMaster = data.mastering
-//     const containerPortadas = document.querySelector(".container-mastering__img")
-//     const divPortadas = document.createElement('div');
-//     divPortadas.classList.add('portadas');
-
-//     for (let index = 0; index < dataMaster.length; index++) {
-//         console.log(dataMaster[index].nombreLanzamiento)
-//         const img = document.createElement('img');
-//         img.src = dataMaster[index].portada
-//         divPortadas.appendChild(img);
-//     }
-
-//     containerPortadas.appendChild(divPortadas);
-// })
-// .catch(err => {
-//     console.log(err)
-// });
-
-// fetch('https://backend-masteringdb.up.railway.app/mastering/')
-// .then(res => {
-//     return res.json();
-// })
-// .then(data =>{
-//     console.table(data.mastering)
-//     const dataMaster = data.mastering
-//     const containerPortadas = document.querySelector(".container-mastering__img")
-//     const divPortadas = document.createElement('div');
-//     divPortadas.classList.add('portadas');
-
-//     // Reordenar el array dataMaster de manera aleatoria
-//     dataMaster.sort(() => Math.random() - 0.5);
-
-//     for (let index = 0; index < dataMaster.length; index++) {
-//         console.log(dataMaster[index].nombreLanzamiento)
-//         const img = document.createElement('img');
-//         img.src = dataMaster[index].portada
-//         divPortadas.appendChild(img);
-//     }
-
-//     containerPortadas.appendChild(divPortadas);
-// })
-// .catch(err => {
-//     console.log(err)
-// });
-
 function cargarPortadasDom() {
 
     fetch('https://backend-masteringdb.up.railway.app/mastering/')
@@ -107,7 +53,7 @@ function cargarPortadasDom() {
                     const img = document.createElement('img');
                     img.src = dataMaster[i].portada;
                     img.classList.add("img-portadas")
-                    img.alt = `${dataMaster[i].nombreLanzamiento} (${dataMaster[i].discoTipo})`  ;
+                    img.alt = `${dataMaster[i].nombreLanzamiento} (${dataMaster[i].discoTipo})`;
                     divPortadas.appendChild(img);
 
                     //? popup
@@ -127,9 +73,6 @@ function cargarPortadasDom() {
 
                 }
 
-
-
-
                 // Ocultar el loader después de cargar las imágenes
                 document.querySelector('.loader').style.display = 'none';
 
@@ -142,13 +85,8 @@ function cargarPortadasDom() {
 
             showImages();
 
-
-
-
-
             const derechaBtn = document.getElementById('derecha');
             const izquierdaBtn = document.getElementById('izquierda');
-
 
             // Función para ir a la página siguiente
             const nextPage = () => {
@@ -161,7 +99,6 @@ function cargarPortadasDom() {
                         derechaBtn.classList.add("ocultar-botones")
                         console.log(currentPage)
                     }
-
                 }
             };
 
@@ -199,76 +136,17 @@ function cargarPortadasDom() {
 
                 if ((currentPage + 1) * limitPerPage < dataMaster.length) {
                     derechaBtn.classList.remove("ocultar-botones")
-
                 }
             });
         })
         .catch(err => {
             console.log(err)
         });
-
     // popupPortadas()
-
 }
 
 
 //TODO Popup
-// function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamiento, linkSpotify) {
-
-
-
-//     setTimeout(() => {
-//         const portadas = document.querySelectorAll(".img-portadas");
-//         const popup = document.querySelector("#popup");
-
-//         console.log(portadas);
-//         portadas.forEach(p => {
-//             p.addEventListener("click", () => {
-//                 console.log("te aprete!");
-//                 popup.classList.remove("hidden")
-
-//             });
-//         });
-//     }, 500);
-
-
-//     const popupImg = document.querySelector(".popup-portada");
-//     const popupDescripcion = document.querySelector(".popup-descripcion")
-
-//     popupImg.innerHTML = `<img src="${img}">`;
-
-//     for (let i = 0; i < 4; i++) {
-//         const p = document.createElement("p");
-//         const a = document.createElement("a");
-//         if (i === 0) {
-//             p.textContent = artista;
-//         } else if (i === 1) {
-//             p.textContent = `${nombreLanzamiento} (${discoTipo})`
-//         } else if (i === 2){
-//             p.textContent = fechaLanzamiento;
-//         } else{
-//             a.href = linkSpotify;
-//             a.textContent = "Escucha aqui!"
-//         }
-
-//         popupDescripcion.appendChild(p);
-//         popupDescripcion.appendChild(a);
-
-//     }
-
-
-//     const popupContainer = document.querySelector(".popup-container__main");
-
-//     popup.addEventListener("click", (e) => {
-//         if (e.target === popup || popupContainer.contains(e.target)) {
-//             return;
-//         } else {
-//             popup.classList.add("hidden");
-//         }
-//     });
-
-
-// }
 
 function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamiento, linkSpotify) {
 
@@ -296,13 +174,6 @@ function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamie
     popupImg.appendChild(imgElement);
 
 
-
- 
-
-    // const discoTipoElement = document.createElement('p');
-    // discoTipoElement.textContent = discoTipo;
-    // popupDescripcion.appendChild(discoTipoElement);
-
     const fechaLanzamientoElement = document.createElement('p');
     fechaLanzamientoElement.textContent = fechaLanzamiento;
     popupDescripcion.appendChild(fechaLanzamientoElement);
@@ -311,7 +182,7 @@ function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamie
     linkSpotifyElement.href = linkSpotify;
     linkSpotifyElement.target = "_blank"
     // linkSpotifyElement.textContent = 'Escucha aquí! ';
-    linkSpotifyElement.innerHTML =  ` <i class="bi bi-spotify"></i> Escucha en Spotify!`;
+    linkSpotifyElement.innerHTML = ` <i class="bi bi-spotify"></i> Escucha en Spotify!`;
 
     popupDescripcion.appendChild(linkSpotifyElement);
 
@@ -321,9 +192,9 @@ function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamie
     // Evitar que se abra si el menú está abierto
     const clickx = document.querySelector('.drop-menu');
     if (!clickx.classList.contains('open-menu')) {
-     
-    popup.classList.remove("hidden");
-   
+
+        popup.classList.remove("hidden");
+
     }
 
     //Cerrar el popup apretando fuera
@@ -336,10 +207,7 @@ function popupPortadas(img, artista, nombreLanzamiento, discoTipo, fechaLanzamie
             popup.classList.add("hidden");
         }
     });
-
 }
-
-
 
 
 function closePortadas() {

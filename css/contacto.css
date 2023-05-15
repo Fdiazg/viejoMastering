@@ -107,7 +107,7 @@ a {
 .form-info {
     display: flex;
     flex-direction: column;
-    flex-basis: 33%;
+    flex-basis: 32%;
     padding: .5rem 0;
     justify-content: space-between;
 }
@@ -304,7 +304,8 @@ a {
     flex-wrap: wrap;
     align-content: space-around;
     align-items: center;
-    padding: 4rem;
+    /* padding: 4rem; */
+    padding: 1rem 4rem 4rem 4rem;
 }
 
 .mensajeForm p {

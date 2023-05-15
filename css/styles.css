@@ -308,7 +308,18 @@ padding: .5rem;
     font-size: 24px;
     font-weight: 600;
     margin: 0px;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.container-trabajos h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+    /* padding: 1.5rem; */
+    padding: 1.5rem 1.5rem 0 1.5rem;
+
 }
 
 .ocultar-botones {
@@ -523,7 +534,13 @@ padding: .5rem;
 .popup-descripcion a {
     margin-bottom: .5rem;
     font-size: 14px;
+
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
 
 .popup-descripcion p:hover {
     color: var(--azul-300);
