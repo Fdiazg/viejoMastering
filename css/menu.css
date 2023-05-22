@@ -16,7 +16,6 @@
 
     --texto-primario-claro: #000;
 
-    /* --background-primero: #191b21; */
     --background-primero: #1C1F25;
     --background-secundario: #171a1e;
     --background-terciario: #16181D;
@@ -37,12 +36,6 @@
 
 }
 
-/* .manu-toggle {
-    position: fixed;
-    top: 0;
-    background: red;
-} */
-
 
 @media (max-width:426px) {
     .drop-menu {
@@ -52,16 +45,6 @@
         flex-direction: column;
         cursor: pointer;
     }
-
-    /* .drop-menu span {
-          background-color: ghostwhite;
-          width: 2em;
-          height: .2em;
-          margin: 0.26em 0;
-          display: block;
-          transition: all .4s ease;
-          transform-origin: 0 0;
-      } */
 
     .drop-menu span {
         background-color: ghostwhite;
@@ -114,9 +97,6 @@
         flex-direction: column;
         align-items: center;
     }
-
-
-
 
 }
 

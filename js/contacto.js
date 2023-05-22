@@ -1,3 +1,4 @@
+
 // ? API PAISES
 const APIPAISES = 'https://restcountries.com/v2/all';
 
@@ -54,27 +55,6 @@ fechaInicio.addEventListener("change", function () {
 });
 
 
-//  function loader() {
-//      document.querySelector('.loader').style.display = 'none';
-
-//      mainForm.innerHTML = ''
-//      mainForm.style.display = 'none'
-//      formFaqs.innerHTML = ''
-//      formFaqs.style.display = 'none'
-//      document.querySelector('.loader').style.display = 'block'
-
-//      setTimeout(() => {
-//          document.querySelector('.loader').style.display = 'none';
-//          mensajeForm.style.display = 'flex'
-//      }, 1000);
-
-//  }
-
-
-
-
-
-
 // ? FORM
 const enviarForm = document.querySelector('#form');
 const mainForm = document.querySelector('#main-contacto')
@@ -83,7 +63,6 @@ const formFaqs = document.querySelector('#form-faqs')
 
 
 const emailContact = document.querySelector('#email').value;
-document.querySelector('.loader').style.display = 'none';
 
 
 enviarForm.addEventListener('submit', (e) => {
@@ -98,9 +77,6 @@ enviarForm.addEventListener('submit', (e) => {
     Email.send({
 
         SecureToken: '38cad0e9-fafb-4bc5-acdc-631a58f4ac76',
-        //   Host : "smtp.elasticemail.com",
-        //   Username : "username",
-        //   Password : "password",
         To: 'viejomastering@gmail.com',
         From: 'viejomastering@gmail.com',
         Subject: `Mail de artista: ${data.proyect}`,
@@ -142,16 +118,12 @@ enviarForm.addEventListener('submit', (e) => {
 
 function mostrarMensajeExito() {
 
-    // const mensajeExito = document.getElementById("mensajeExito");
-    // mensajeExito.style.display = "block";
-
-
-
     mainForm.innerHTML = ''
     mainForm.style.display = 'none'
     formFaqs.innerHTML = ''
     formFaqs.style.display = 'none'
-    document.querySelector('.loader').style.display = 'block'
+    let loader = document.querySelector('.loader');
+    loader.classList.toggle('d-none');
 
     setTimeout(() => {
         document.querySelector('.loader').style.display = 'none';
@@ -162,36 +134,5 @@ function mostrarMensajeExito() {
 
 
 }
-
-
-
-//   document.querySelector('.loader').style.display = 'none';
-
-
-//   enviarForm.addEventListener('submit', (e) => {
-//       e.preventDefault();
-
-
-//       const formData = new FormData(e.target);
-//       const data = Object.fromEntries(formData.entries());
-
-//       console.log(data)
-//       mainForm.innerHTML = '';
-//       mainForm.style.display = 'none'
-//       formFaqs.innerHTML = '';
-//       formFaqs.style.display = 'none';
-//       document.querySelector('.loader').style.display = 'block';
-
-//       setTimeout(() => {
-//          document.querySelector('.loader').style.display = 'none';
-//          mensajeForm.style.display = 'flex'
-//       }, 1000);
-
-
-
-//   });
-
-
-
 
 // ? Reiniciar Form
